@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="rocket"
+            type="com.example.uspace.ui.models.Rocket" />
+    </data>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/card_padding">
+
+    <ImageView
+        android:id="@+id/rocket_image"
+        android:layout_width="@dimen/item_image_size"
+        android:layout_height="@dimen/item_image_size"
+        android:scaleType="centerCrop"
+        app:imageUrl="@{rocket.images[0]}"
+        app:placeholder="@{@drawable/splash_background}"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/rocket_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/text_margin"
+        android:text="@{rocket.name}"
+        app:layout_constraintStart_toEndOf="@id/rocket_image"
+        app:layout_constraintTop_toTopOf="@id/rocket_image"
+        tools:text="Rocket name"/>
+
+    <TextView
+        android:id="@+id/rocket_height"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/text_margin"
+        android:paddingTop="@dimen/text_padding"
+        app:rocketHeight="@{rocket.height}"
+        app:layout_constraintStart_toEndOf="@id/rocket_image"
+        app:layout_constraintTop_toBottomOf="@id/rocket_name"
+        tools:text="Rocket name"/>
+
+    <TextView
+        android:id="@+id/rocket_weight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/text_margin"
+        android:paddingTop="@dimen/text_padding"
+        app:rocketWeight="@{rocket.mass}"
+        app:layout_constraintStart_toEndOf="@id/rocket_image"
+        app:layout_constraintTop_toBottomOf="@id/rocket_height"
+        tools:text="Rocket name"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout></layout>

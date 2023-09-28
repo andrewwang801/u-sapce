@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="crew"
+            type="com.example.uspace.ui.models.Crew" />
+
+        <variable
+            name="clickListener"
+            type="com.example.uspace.ui.adapters.CrewClickListener" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/card_padding">
+
+        <ImageView
+            android:id="@+id/crew_image"
+            android:layout_width="@dimen/item_image_size"
+            android:layout_height="@dimen/item_image_size"
+            android:scaleType="centerCrop"
+            android:onClick="@{() -> clickListener.onClick(crew)}"
+            app:imageUrl="@{crew.image}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:placeholder="@{@drawable/splash_background}" />
+
+        <TextView
+            android:id="@+id/crew_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/text_padding"
+            android:text="@{crew.name}"
+            app:layout_constraintTop_toTopOf="@id/crew_image"
+            app:layout_constraintStart_toEndOf="@+id/crew_image"
+            tools:text="James Vardy"/>
+
+        <TextView
+            android:id="@+id/crew_agency"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/text_padding"
+            android:text="@{crew.agency}"
+            app:layout_constraintTop_toBottomOf="@id/crew_name"
+            app:layout_constraintStart_toEndOf="@+id/crew_image"
+            tools:text="NASA"/>
+
+        <TextView
+            android:id="@+id/crew_launches"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/text_padding"
+            app:numberOfLaunches="@{crew}"
+            app:layout_constraintTop_toBottomOf="@id/crew_agency"
+            app:layout_constraintStart_toEndOf="@+id/crew_image"
+            tools:text="15"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

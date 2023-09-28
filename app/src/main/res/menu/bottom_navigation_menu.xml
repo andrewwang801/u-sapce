@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/page_1"
+        android:enabled="true"
+        android:icon="@drawable/ic_baseline_favorite_24"
+        android:title="page1"/>
+    <item
+        android:id="@+id/page_2"
+        android:icon="@drawable/ic_baseline_music_note_24"
+        android:title="page2"/>
+    <item
+        android:id="@+id/page_3"
+        android:icon="@drawable/ic_baseline_place_24"
+        android:title="page3"/>
+</menu>
